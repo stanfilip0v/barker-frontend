@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css?family=Exo');
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
+/* GUEST HOME PAGE */
+
+
+html {
+    font: 12px/1.5 "Exo", sans-serif;
+}
+
+html {
+    height:100%;
+}
+body {
+    min-height:100%; padding:0; margin:0; position:relative;
+}
+footer {
+    background:#17355B;
+    color: white;
+    font-weight: bold;
+}
+
+body {
+    position: relative;
+}
+    
+body::after {
+    content: '';
+    display: block;
+    height: 3rem; /* Set same as footer's height */
+}
+    
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0rem -0.6rem 1rem #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.3em }
+h2 { font-size: 2em }
+h3 { font-size: 1.8em }
+h4 { font-size: 1.6em }
+h5 { font-size: 1.4em }
+h6 { font-size: 1.2em }
+
+p, ol {
+    padding-bottom: 1.5em;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.guest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20rem 5rem;
+    color: #17355B;
+}
+
+.guest .content-left {
+    flex: 1 0 40%;
+    border-right: 1px solid #17355B;
+    min-height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guest .content-right {
+    flex: 1 0 40%;
+    border-left: 1px solid #17355B;
+    min-height: 30rem;
+    display: flex;
+    justify-content: center;
+}
+
+.guest .left,
+.guest .right {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    align-content: flex-start;
+}
+
+.guest form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.guest input {
+    flex: 1 0 100%;
+    padding: 1rem 2rem;
+    border: 1px solid  #17355B;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.guest .logo {
+    width: 10%;
+    height: auto;
+}
+
+.guest .links {
+    display: flex;
+}
+
+.guest a {
+    width: 10%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: 1px solid #17355B;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+
+.guest a:hover {
+    background: lightgray;
+}
+
+.guest button {
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid #17355B;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    background: none;
+}
+
+.guest button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0rem 0.6rem 1rem #333;
+}
+
+header nav {
+    flex: 1 0 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 6rem;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+}
+
+header nav li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    color: black;
+    border-bottom: 1px solid #17355B;
+}
+
+header nav .logo {
+    width: 10rem;
+}
+
+/* USER HOME PAGE */
+
+.user {
+    padding: 4rem 20rem;
+}
+
+.feed {
+    flex: 1 0 100%;
+    padding: 2rem 4rem;
+    background: rgb(236, 236, 236);
+    box-shadow: 0 0 1rem #333;
+}
+
+.bark {
+    display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid darkslateblue;
+    padding: 1rem 2rem;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.content ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.bark li {
+    display: block;
+    padding: 0 0.5rem;
+    border-right: 1px solid black;
+}
+
+.content * {
+    padding-bottom: 0.3rem;
+}
+
+/* PROFILE */
+
+.profile {
+    padding: 4rem 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid #17355B;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    background: none;
+    margin-bottom: 1rem;
+}
+
+.user-info button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+/* WHO TO FOLLOW */
+
+.to-follow {
+    padding: 4rem 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.to-follow .users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggested-user {
+    flex: 1 1 100%;
+    border-top: 2px solid #17355B;
+    padding: 1rem 0;
+}
+
+.to-follow button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid #17355B;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    background: none;
+    margin-bottom: 1rem;
+}
+
+.to-follow button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+/* BARK */
+
+.bark-main {
+    padding: 4rem 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.bark-main .comments {
+    flex: 1 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.bark-main .comment {
+    display: flex;
+    flex: 1 0 100%;
+}
+
+.bark-main .add-comment {
+    flex: 1 0 100%;
+}
+
+.add-comment textarea {
+    width: 100%;
+    height: 6rem;
+    border: 1px solid #17355B;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.add-comment button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid #17355B;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    background: none;
+    margin-bottom: 1rem;
+}
+
+.add-comment button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
