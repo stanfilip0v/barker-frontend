@@ -190,6 +190,7 @@ header nav li {
 
 header nav li a {
     text-decoration: none;
+    font-weight: bold;
     font-size: 1.5rem;
     padding: 0.5rem 1.5rem;
     color: black;
@@ -230,10 +231,24 @@ header nav .logo {
     cursor: pointer;
 }
 
+.image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image span {
+    text-decoration: none;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
 .feed {
     flex: 1 0 100%;
     padding: 2rem 4rem;
     background: rgb(236, 236, 236);
+    border-radius: 0.3rem;
     box-shadow: 0 0 1rem #333;
 }
 
@@ -243,8 +258,12 @@ header nav .logo {
     flex-wrap: wrap;
     justify-content: space-between;
     border-top: 1px solid darkslateblue;
+    border-radius: 0.2rem;
     padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background: white;
 }
+
 
 .content {
     flex: 1 0 auto;
@@ -260,7 +279,7 @@ header nav .logo {
 .bark li {
     display: block;
     padding: 0 0.5rem;
-    border-right: 1px solid black;
+    border-right: 1px solid #17355B;
     font-size: 1.2rem;
 }
 
@@ -271,11 +290,11 @@ header nav .logo {
 .content .bark-content {
     padding-left: 0.5rem;
     padding-bottom: 0.3rem;
-    font-size: 1.6rem;
+    font-size: 2rem;
     text-decoration: none;
 }
 
-.bark .content a {
+.bark a {
     text-decoration: none;
     color: black;
 }
@@ -318,6 +337,10 @@ header nav .logo {
 .user-info button:hover {
     background: lightgray;
     cursor: pointer;
+}
+
+.user-info img {
+    width: 20rem;
 }
 
 /* WHO TO FOLLOW */
@@ -395,6 +418,8 @@ textarea {
     border: 1px solid #17355B;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
 }
 
 .add-comment button {

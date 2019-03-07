@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router';
 import AuthService from '../Services/auth-service';
 import { StateConsumer } from './Contexts/state-context';
 

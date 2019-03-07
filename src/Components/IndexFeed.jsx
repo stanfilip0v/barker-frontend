@@ -49,9 +49,12 @@ class Feed extends Component {
                     <h1>Feed</h1>
                     {this.state.barks.map((bark) =>
                         <div className="bark" key={bark._id}>
-                            <div className="image">
-                                <img src={`${bark.creator.picture}`} alt='smh' />
-                            </div>
+                            <Link to={`/users/${bark.creator._id}`}>
+                                <div className="image">
+                                    <img src={`${bark.creator.picture}`} alt='smh' />
+                                    <span>{bark.creator.username}</span>
+                                </div>
+                            </Link>
                             <div className="content">
                                 <ul>
                                     <li><Link to={`/users/${bark.creator._id}`}>{bark.creator.username}</Link></li>

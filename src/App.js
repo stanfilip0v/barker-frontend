@@ -5,6 +5,7 @@ import { DefaultState, StateProvider } from './Components/Contexts/state-context
 import './styles.css';
 import IndexGuest from './Views/IndexGuest';
 import IndexUser from './Views/IndexUser';
+import ProfilePage from './Views/Profile';
 
 class App extends Component {
   state = DefaultState;
@@ -25,6 +26,7 @@ class App extends Component {
           <div className="App">
             <Switch>
               <Route exact path="/" component={this.state.isLogged ? IndexUser : IndexGuest} />
+              <Route path="/user/:userId" component={ProfilePage}/>
             </Switch>
           </div>
         </StateProvider>
