@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { StateConsumer } from './Contexts/state-context';
 
@@ -12,7 +12,7 @@ class Header extends Component {
                         <header>
                             <nav>
                                 <Link to="/">
-                                    <img class="logo" src="/dog-1484728_640.png" alt="smh" />
+                                    <img className="logo" src="/dog-1484728_640.png" alt="smh" />
                                 </Link>
                                 <ul>
                                     { state.isAdmin ? <li><Link to="/">View reports</Link></li> : null }

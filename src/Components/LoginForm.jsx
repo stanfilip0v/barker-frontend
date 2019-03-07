@@ -27,9 +27,8 @@ class LoginForm extends Component {
         if(response.error) {
             this.setState({ error: response.error });
         } else {
-            this.props.updateState(response, true);
-            localStorage.setItem('token', response.token);
-            return <Redirect to="/" />;
+            await localStorage.setItem('token', response.token);
+            await this.props.updateState(response, true);
         }
     }
 

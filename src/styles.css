@@ -206,6 +206,30 @@ header nav .logo {
     padding: 4rem 20rem;
 }
 
+.user form {
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.user button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid #17355B;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    background: none;
+    margin-bottom: 1rem;
+}
+
+.user button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
 .feed {
     flex: 1 0 100%;
     padding: 2rem 4rem;
@@ -224,6 +248,7 @@ header nav .logo {
 
 .content {
     flex: 1 0 auto;
+    margin-left: 1rem;
 }
 
 .content ul {
@@ -236,6 +261,23 @@ header nav .logo {
     display: block;
     padding: 0 0.5rem;
     border-right: 1px solid black;
+    font-size: 1.2rem;
+}
+
+.bark img {
+    width: 5rem;
+}
+
+.content .bark-content {
+    padding-left: 0.5rem;
+    padding-bottom: 0.3rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+.bark .content a {
+    text-decoration: none;
+    color: black;
 }
 
 .content * {
@@ -347,7 +389,7 @@ header nav .logo {
     flex: 1 0 100%;
 }
 
-.add-comment textarea {
+textarea {
     width: 100%;
     height: 6rem;
     border: 1px solid #17355B;

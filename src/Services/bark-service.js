@@ -1,13 +1,18 @@
-import { get } from './requester';
+import { get, post } from './requester';
 
 class BarkService {
     constructor() {
         this.baseUrl = 'http://localhost:1337/bark';
-        this.loginUrl = `${this.baseUrl}/signin`
+        this.followingBarks = `${this.baseUrl}/getBarksByFollowing`;
+        this.createNewBark = `${this.baseUrl}/create`;
     }
 
-    getBarksByFollowers(credentials) {
-        return get(this.loginUrl, credentials);
+    getBarksByFollowing() {
+        return get(this.followingBarks);
+    }
+
+    createBark(content) {
+        return post(this.createNewBark, content);
     }
 }
 
