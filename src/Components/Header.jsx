@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import { StateConsumer } from './Contexts/state-context';
 
 class Header extends Component {
+    logOut = () => {
+        const defaultState = {
+            isAdmin: false,
+            username: '',
+            userId: ''
+        }
+
+        localStorage.clear();
+        this.props.updateState(defaultState, false);
+    }
+
     render() {
         return (
             <StateConsumer>
@@ -18,7 +29,7 @@ class Header extends Component {
                                     { state.isAdmin ? <li><Link to="/">View reports</Link></li> : null }
                                     <li><Link to="/">Who to follow</Link></li>
                                     <li><Link to="/">My profile</Link></li>
-                                    <li><Link to="/">Logout</Link></li>
+                                    <li><Link to="/" onClick={this.logOut}>Logout</Link></li>
                                 </ul>
                             </nav>
                         </header>
