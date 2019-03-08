@@ -1,4 +1,4 @@
-import { get } from './requester';
+import { get, post } from './requester';
 
 class UserService {
     constructor() {
@@ -7,6 +7,10 @@ class UserService {
 
     getUser(userId) {
         return get(`${this.baseUrl}/${userId}`);
+    }
+
+    followUser(userId) {
+        return post(`${this.baseUrl}/follow/${userId}`);
     }
 }
 

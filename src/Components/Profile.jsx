@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import UserService from '../Services/user-service.js';
+import BarkPreview from './BarkPreview';
+import { StateConsumer } from './Contexts/state-context';
 
 class Profile extends Component {
     state = {
@@ -24,41 +26,36 @@ class Profile extends Component {
         });
     }
 
+    followUser = async () => {
+        const user = await Profile.service.followUser(this.state._id);
+        this.setState({
+            ...user
+        });
+    }
+
     render() {
         return (
-            <main className="profile">
-                <div className="user-info">
-                    <img src={this.state.picture} alt="profile pic" />
-                    <h2>{this.state.username}</h2>
-                    <h3>{this.state.email}</h3>
-                    <p><span>{this.state.followers.length} Followers </span> <span> {this.state.following.length} Following</span></p>
-                    <button>Follow</button>
-                </div>
-            </main>
+            <StateConsumer>
+                {
+                    (state) => (
+                        <main className="profile">
+                            <div className="user-info">
+                                <img src={this.state.picture} alt="profile pic" />
+                                <h2>{this.state.username}</h2>
+                                <h3>{this.state.email}</h3>
+                                <p><span>{this.state.followers.length} Followers </span> <span> {this.state.following.length} Following</span></p>
+                                {state.userId !== this.state._id ? <button onClick={this.followUser}>{!this.state.followers.includes(state.userId) ? `Follow` : `Unfollow`}</button> : null}
+                            </div>
+                            <div className="feed">
+                                <h1>Barks</h1>
+                                <BarkPreview barks={this.state.barks} user={this.state} />
+                            </div>
+                        </main>
+                    )
+                }
+            </StateConsumer>
         )
     }
 }
 
 export default Profile;
-                // <div className="feed">
-                //     <h1>Barks</h1>
-                //     <div className="bark">
-                //         <div className="image">
-                //             <img src="profile pic" alt="profile pic" />
-                //         </div>
-                //         <div className="content">
-                //             <ul>
-                //                 <li>{Username}</li>
-                //                 <li>{email}</li>
-                //             </ul>
-                //             <div className="bark-content">
-                //                 {barkContent}
-                //             </div>
-                //             <ul>
-                //                 <li>{comments.length} Comments</li>
-                //                 <li>{Date}</li>
-                //                 <li><i className="fas fa-heart"></i> {likes}</li>
-                //             </ul>
-                //         </div>
-                //     </div>
-                // </div>

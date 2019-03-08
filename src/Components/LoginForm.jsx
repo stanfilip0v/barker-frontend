@@ -27,6 +27,11 @@ class LoginForm extends Component {
             this.setState({ error: response.error });
         } else {
             await localStorage.setItem('token', response.token);
+            await localStorage.setItem('user', JSON.stringify({
+                userId: response.userId,
+                username: response.username,
+                isAdmin: response.isAdmin
+            }));
             await this.props.updateState(response, true);
         }
     }

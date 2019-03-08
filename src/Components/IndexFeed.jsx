@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import BarkService from '../Services/bark-service';
+import BarkPreview from './BarkPreview';
 
 class Feed extends Component {
     state = {
@@ -47,32 +47,7 @@ class Feed extends Component {
                 </div>
                 <div className="feed">
                     <h1>Feed</h1>
-                    {this.state.barks.map((bark) =>
-                        <div className="bark" key={bark._id}>
-                            <Link to={`/users/${bark.creator._id}`}>
-                                <div className="image">
-                                    <img src={`${bark.creator.picture}`} alt='smh' />
-                                    <span>{bark.creator.username}</span>
-                                </div>
-                            </Link>
-                            <div className="content">
-                                <ul>
-                                    <li><Link to={`/users/${bark.creator._id}`}>{bark.creator.username}</Link></li>
-                                    <li> {bark.creator.email}</li>
-                                </ul>
-                                <Link to={`/${bark.creator.username}/${bark._id}`}>
-                                    <div className="bark-content">
-                                        {bark.content}
-                                    </div>
-                                </Link>
-                                <ul>
-                                    <li>{bark.comments.length} Comments</li>
-                                    <li>{bark.creationDate.split('T')[0]}</li>
-                                    <li><i className="fas fa-heart"></i> {bark.likes}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    )}
+                    <BarkPreview barks={this.state.barks} />
                 </div>
             </main>
         )
