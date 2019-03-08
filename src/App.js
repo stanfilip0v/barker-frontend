@@ -27,6 +27,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={this.state.isLogged ? IndexUser : IndexGuest} />
               <Route path="/user/:userId" component={ProfilePage}/>
+
             </Switch>
           </div>
         </StateProvider>

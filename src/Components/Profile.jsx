@@ -17,8 +17,20 @@ class Profile extends Component {
 
     static service = new UserService();
 
+    async shouldComponentUpdate(nextProps, nextState) {
+        const newId = nextProps.pathInfo.params.userId;
+        const oldId = nextState._id;
+
+        if(oldId !== '' && newId !== oldId) {
+            const user = await Profile.service.getUser(newId);
+            this.setState({
+                ...user
+            });
+        }
+    }
+
     async componentDidMount() {
-        const userId = this.props.userId.userId;
+        const userId = this.props.pathInfo.params.userId;
         const user = await Profile.service.getUser(userId);
 
         this.setState({

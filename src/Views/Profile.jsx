@@ -9,7 +9,7 @@ class ProfilePage extends Component {
         return (
             <Fragment>
                 <Header />
-                <Profile userId={this.props.match.params}/>
+                <Profile pathInfo={this.props.match}/>
                 <Footer />
             </Fragment>
         )
