@@ -6,6 +6,7 @@ import './styles.css';
 import IndexGuest from './Views/IndexGuest';
 import IndexUser from './Views/IndexUser';
 import ProfilePage from './Views/Profile';
+import SuggestedPage from './Views/SuggestedPage';
 
 class App extends Component {
   state = DefaultState;
@@ -19,6 +20,10 @@ class App extends Component {
     });
   }
 
+  componentWillUnmount() {
+    localStorage.clear();
+  }
+
   render() {
     return (
       <Router>
@@ -26,8 +31,8 @@ class App extends Component {
           <div className="App">
             <Switch>
               <Route exact path="/" component={this.state.isLogged ? IndexUser : IndexGuest} />
-              <Route path="/user/:userId" component={ProfilePage}/>
-
+              <Route path="/user/suggested" component={SuggestedPage}/>
+              <Route path="/user/profile/:userId" component={ProfilePage}/>
             </Switch>
           </div>
         </StateProvider>

@@ -27,8 +27,8 @@ class Header extends Component {
                                 </Link>
                                 <ul>
                                     { state.isAdmin ? <li><Link to="/">View reports</Link></li> : null }
-                                    <li><Link to="/">Who to follow</Link></li>
-                                    <li><NavLink to={`/user/${state.userId}`} activeClassName="selected">My profile</NavLink></li>
+                                    <li><Link to="/user/suggested">Who to follow</Link></li>
+                                    <li><NavLink to={`/user/profile/${state.userId}`} activeClassName="selected">My profile</NavLink></li>
                                     <li><Link to="/" onClick={this.logOut}>Logout</Link></li>
                                 </ul>
                             </nav>
