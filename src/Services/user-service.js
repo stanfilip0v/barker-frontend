@@ -5,15 +5,23 @@ class UserService {
         this.baseUrl = 'http://localhost:1337/user';
     }
 
-    getSuggested() {
+    getSuggested = () => {
         return get(`${this.baseUrl}/suggested`);
     }
 
-    getUser(userId) {
+    getFollowing = (username) =>  {
+        return get(`${this.baseUrl}/following/${username}`);
+    }
+
+    getFollowers = (username) =>  {
+        return get(`${this.baseUrl}/followers/${username}`);
+    }
+
+    getUser = (userId) => {
         return get(`${this.baseUrl}/profile/${userId}`);
     }
 
-    followUser(userId) {
+    followUser = (userId) => {
         return post(`${this.baseUrl}/follow/${userId}`);
     }
 }

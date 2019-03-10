@@ -7,7 +7,7 @@ const BarkPreview = (props) => {
     return (
         barks.map((bark) => (
             <div className="bark" key={bark._id}>
-                <Link to={`/user/profile/${bark.creator._id}`}>
+                <Link to={`/user/profile/${bark.creator._id || bark.creator}`}>
                     <div className="image">
                         <img src={`${bark.creator.picture || user.picture}`} alt='smh' />
                         <span>{bark.creator.username || user.username}</span>

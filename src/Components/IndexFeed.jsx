@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import BarkService from '../Services/bark-service';
 import BarkPreview from './BarkPreview';
 
@@ -47,7 +48,10 @@ class Feed extends Component {
                 </div>
                 <div className="feed">
                     <h1>Feed</h1>
-                    <BarkPreview barks={this.state.barks} />
+                    <br />
+                    {this.state.barks.length > 0
+                        ? <BarkPreview barks={this.state.barks} />
+                        : <h4>You are currently not following anybody. Please check out <Link to="/user/suggested">the suggested page</Link></h4>}
                 </div>
             </main>
         )

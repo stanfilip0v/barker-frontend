@@ -252,6 +252,13 @@ header nav .logo {
     box-shadow: 0 0 1rem #333;
 }
 
+.feed h4 a {
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    color: cornflowerblue
+}
+
 .bark {
     display: flex;
     flex: 1 0 100%;
@@ -313,6 +320,15 @@ header nav .logo {
     align-items: center;
 }
 
+.user-info span {
+    font-weight: bold;
+}
+
+.user-info a {
+    color: black;
+    font-weight: 400;
+}
+
 .user-info {
     display: flex;
     flex-direction: column;
@@ -367,6 +383,10 @@ header nav .logo {
     padding: 1rem 0;
 }
 
+.suggested-user img {
+    width: 20rem;
+}
+
 .to-follow button {
     text-align: center;
     text-decoration: none;
@@ -413,7 +433,7 @@ header nav .logo {
 }
 
 textarea {
-    width: 100%;
+    width: 97%;
     height: 6rem;
     border: 1px solid #17355B;
     border-radius: 0.5rem;
