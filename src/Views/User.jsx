@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import { StateConsumer } from '../Components/Contexts/state-context';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import Following from '../Components/Following';
@@ -7,20 +8,32 @@ import Followers from '../Components/Followers';
 import Profile from '../Components/Profile';
 import Suggested from '../Components/Suggested';
 
-class ProfilePage extends Component {
+class UserPage extends Component {
     
     render() {
         return (
             <Fragment>
                 <Header />
-                <Route path={`${this.props.match.url}/suggested`} component={Suggested}/>
-                <Route path={`${this.props.match.url}/following/:username`} exact render={() => <Following pathInfo={this.props}/>}/>
-                <Route path={`${this.props.match.url}/followers/:username`} exact render={() => <Followers pathInfo={this.props}/>}/>
-                <Route path={`${this.props.match.url}/profile/:userId`} render={() => <Profile pathInfo={this.props}/>}/>
+                <Route path={`${this.props.pathInfo.match.url}/suggested`} exact component={Suggested}/>
+                <Route path={`${this.props.pathInfo.match.url}/following/:username`} render={() => <Following pathInfo={this.props.pathInfo}/>}/>
+                <Route path={`${this.props.pathInfo.match.url}/followers/:username`} render={() => <Followers pathInfo={this.props.pathInfo}/>}/>
+                <Route path={`${this.props.pathInfo.match.url}/profile/:userId`} render={() => <Profile pathInfo={this.props.pathInfo}/>}/>
                 <Footer />
             </Fragment>
         )
     }
 }
 
-export default ProfilePage;
+const UserPageWithContext = (props) => {
+    return (
+        <StateConsumer>
+            {
+                (state) => (
+                    state.isLogged ? <UserPage pathInfo={props}/> : <Redirect to="/"/>
+                )
+            }
+        </StateConsumer>
+    )
+}
+
+export default UserPageWithContext;

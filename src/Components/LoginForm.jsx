@@ -21,7 +21,7 @@ class LoginForm extends Component {
         event.preventDefault();
 
         const { email, password } = this.state;
-        const response = await LoginForm.service.login({ email: email, password: password });
+        const response = await LoginForm.service.login({ email, password });
         
         if(response.error) {
             this.setState({ error: response.error });

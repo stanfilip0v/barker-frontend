@@ -461,3 +461,12 @@ textarea {
     cursor: pointer;
 }
 
+.error {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    background: red;
+    margin: 1rem;
+    padding: 1rem 2rem;
+}
+

@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from 'react';
+import AuthService from '../Services/auth-service';
+import { StateConsumer } from './Contexts/state-context';
 
 class RegisterForm extends Component {
     state = {
         email: '',
         username: '',
-        password: ''
+        password: '',
+        error: null
     }
+
+    static service = new AuthService();
 
     handleChange = (event) => {
         this.setState({
@@ -13,8 +18,25 @@ class RegisterForm extends Component {
         });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
+
+        const { email, password, username } = this.state;
+        const response = await RegisterForm.service.register({ email, password, username });
+
+        if(response.errors) {
+            this.setState({ error: response.errors[0].msg });
+        } else {
+            const loginResponse = await RegisterForm.service.login({ email, password });
+
+            await localStorage.setItem('token', loginResponse.token);
+            await localStorage.setItem('user', JSON.stringify({
+                userId: loginResponse.userId,
+                username: loginResponse.username,
+                isAdmin: loginResponse.isAdmin
+            }));
+            await this.props.updateState(loginResponse, true);
+        }
     }
 
     render() {
@@ -33,4 +55,19 @@ class RegisterForm extends Component {
     }
 }
 
-export default RegisterForm;
+const RegisterWithContext = (props) => {
+    return(
+        <StateConsumer>
+            {
+                (state) => (
+                    <RegisterForm
+                        {...props}
+                        isLogged={state.isLogged}
+                        updateState={state.updateState}/>
+                )
+            }
+        </StateConsumer>
+    )
+}
+
+export default RegisterWithContext;
