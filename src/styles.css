@@ -240,6 +240,7 @@ header nav .logo {
 
 .image span {
     text-decoration: none;
+    font-weight: bold;
     margin-top: 0.5rem;
     font-size: 1.2rem;
 }
@@ -283,7 +284,8 @@ header nav .logo {
     margin: 0;
 }
 
-.bark li {
+.bark li,
+.comment li {
     display: block;
     padding: 0 0.5rem;
     border-right: 1px solid #17355B;
@@ -291,7 +293,7 @@ header nav .logo {
 }
 
 .bark img {
-    width: 5rem;
+    width: 7rem;
 }
 
 .content .bark-content {
@@ -417,15 +419,55 @@ header nav .logo {
 }
 
 .bark-main .comments {
+    padding: 1rem 2rem;
     flex: 1 0 100%;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    background: rgb(236, 236, 236);
+    border-radius: 0.3rem;
+    box-shadow: 0 0 1rem #333;
 }
 
 .bark-main .comment {
     display: flex;
     flex: 1 0 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid black;
+}
+
+.comment-content-outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.comment-content-outer li {
+    border: none;
+    font-size: 1rem;
+}
+
+.comment-content {
+    margin-top: 1.7rem;
+    font-size: 1.2rem;
+}
+
+.bark-main .comment a {
+    text-decoration: none;
+    color: black;
+}
+
+.bark-main .comment img {
+    width: 4rem;
+}
+
+.bark-main button {
+    background: white;
+    border: 1px solid red;
+    border-radius: 1rem;
+    cursor: pointer;
 }
 
 .bark-main .add-comment {
