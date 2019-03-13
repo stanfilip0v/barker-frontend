@@ -474,6 +474,10 @@ header nav .logo {
     flex: 1 0 100%;
 }
 
+.bark-main i {
+    cursor: pointer;
+}
+
 textarea {
     width: 97%;
     height: 6rem;

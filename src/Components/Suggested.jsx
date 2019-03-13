@@ -6,7 +6,7 @@ import withData from './Hocs/UserList-with-data';
 class Suggested extends Component {
 
     render() {
-        const { users, followUser } = this.props;
+        const { users } = this.props;
 
         return (
             <main className="to-follow">
@@ -18,7 +18,6 @@ class Suggested extends Component {
                             <h2>{user.username}</h2>
                             <h4>{user.email}</h4>
                             {user.followedBy ? <p>Followed by {user.followedBy}</p> : null}
-                            <button onClick={() => followUser(user._id)}>Follow</button>
                         </div>
                     ))}
                 </div>

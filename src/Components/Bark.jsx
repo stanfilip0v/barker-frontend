@@ -47,13 +47,12 @@ class Bark extends Component {
     }
 
     likeBark = async () => {
-        const responseOne = await Bark.barkService.likeBark(this.state.bark._id);
-        const responseTwo = await Bark.barkService.getBarkById(this.state.bark._id)
+        const response = await Bark.barkService.likeBark(this.state.bark._id);
 
         this.setState({
-            isLiked: responseOne.isLiked,
-            bark: responseTwo.bark,
-            comments: responseTwo.bark.comments
+            isLiked: response.isLiked,
+            bark: response.bark,
+            comments: response.bark.comments
         });
     }
 
