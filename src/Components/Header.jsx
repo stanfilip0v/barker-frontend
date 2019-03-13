@@ -26,7 +26,7 @@ class Header extends Component {
                                     <img className="logo" src="/dog-1484728_640.png" alt="smh" />
                                 </Link>
                                 <ul>
-                                    { state.isAdmin ? <li><Link to="/">View reports</Link></li> : null }
+                                    { state.isAdmin ? <li><Link to="/reports">View reports</Link></li> : null }
                                     <li><Link to="/user/suggested">Who to follow</Link></li>
                                     <li><NavLink to={`/user/profile/${state.userId}`} activeClassName="selected">My profile</NavLink></li>
                                     <li><Link to="/" onClick={this.logOut}>Logout</Link></li>

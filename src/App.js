@@ -7,6 +7,7 @@ import IndexGuest from './Views/IndexGuest';
 import IndexUser from './Views/IndexUser';
 import User from './Views/User';
 import BarkPage from './Views/BarkPage';
+import ReportsPage from './Views/ReportsPage';
 
 class App extends Component {
   state = DefaultState;
@@ -29,6 +30,7 @@ class App extends Component {
               <Route exact path="/" component={this.state.isLogged ? IndexUser : IndexGuest} />
               <Route path="/user" component={User} />
               <Route path="/:username/:barkId" component={BarkPage}/>
+              <Route path="/reports" component={ReportsPage}/>
             </Switch>
           </div>
         </StateProvider>
