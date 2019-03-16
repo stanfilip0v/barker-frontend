@@ -113,7 +113,7 @@ ul {
 }
 
 .guest .logo {
-    width: 10%;
+    width: 10rem;
     height: auto;
 }
 
@@ -274,7 +274,7 @@ header nav .logo {
 
 
 .content {
-    flex: 1 0 auto;
+    flex: 1 0 70%;
     margin-left: 1rem;
 }
 
