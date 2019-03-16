@@ -43,11 +43,11 @@ class RegisterForm extends Component {
         return (
             <Fragment>
                 <form>
-                    <h2>Sign in</h2>
+                    <h2>Sign up</h2>
                     <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
                     <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
                     <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
-                    <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Sign in</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Sign up</button>
                 </form>
                 { this.state.error ? <div className="error">{this.state.error}</div> : null }
             </Fragment>

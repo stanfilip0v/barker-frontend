@@ -8,6 +8,7 @@ import IndexUser from './Views/IndexUser';
 import User from './Views/User';
 import BarkPage from './Views/BarkPage';
 import ReportsPage from './Views/ReportsPage';
+import NotFound from './Components/NotFound';
 
 class App extends Component {
   state = DefaultState;
@@ -21,6 +22,14 @@ class App extends Component {
     });
   }
 
+  componentDidCatch(error, info) {
+    localStorage.clear();
+
+    this.setState({
+      ...DefaultState
+    });
+  }
+
   render() {
     return (
       <Router>
@@ -31,6 +40,7 @@ class App extends Component {
               <Route path="/user" component={User} />
               <Route path="/:username/:barkId" component={BarkPage}/>
               <Route path="/reports" component={ReportsPage}/>
+              <Route component={NotFound} />
             </Switch>
           </div>
         </StateProvider>
